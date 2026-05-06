@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>split-img</title>
+</head>
+<style>
+    body {
+        background: #000;
+        display: grid;
+        place-items: center;
+        height: 100vh;
+    }
+
+    .main-img {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 300px;
+        height: 300px;
+
+    }
+
+    .image {
+        background-image: url(https://thumbs.dreamstime.com/b/blooming-branches-apple-tree-blue-sky-background-438183557.jpg);
+        background-size: 300px 300px;
+        transition: transform .3s ease;
+    }
+
+    .p1 {
+        background-position: top left;
+    }
+
+    .p2 {
+        background-position: top right;
+    }
+
+    .p3 {
+        background-position: bottom left;
+    }
+
+    .p4 {
+        background-position: bottom right;
+    }
+
+    .main-img:hover .p1 {
+        transform: translate(-5px, -5px);
+    }
+
+    .main-img:hover .p2 {
+        transform: translate(10px, -5px);
+    }
+
+    .main-img:hover .p3 {
+        transform: translate(-5px, 10px);
+    }
+
+    .main-img:hover .p4 {
+        transform: translate(10px, 10px);
+    }
+</style>
+
+<body>
+
+    <div class="main-img">
+        <div class="image p1"></div>
+        <div class="image p2"></div>
+        <div class="image p3"></div>
+        <div class="image p4"></div>
+    </div>
+
+</body>
+
+</html>

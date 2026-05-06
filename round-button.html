@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <title>round-button</title>
+</head>
+<style>
+    body {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    button {
+        height: 200px;
+        width: 200px;
+        margin: 5px;
+        background-color: #fcfdfec2;
+        transition: all 1s ease-in-out;
+    }
+
+    i {
+        color: #bc4a3a;
+        font-size: 4rem;
+    }
+
+    .first {
+        border-radius: 190px 0 0 0;
+    }
+
+    .second {
+        border-radius: 0 190px 0 0;
+    }
+
+    .third {
+        border-radius: 0 0 0 190px;
+    }
+
+    .fourth {
+        border-radius: 0 0 190px 0;
+    }
+
+    button:hover {
+        transform: scale(1.05);
+        background: #bc493a4b;
+        color: black;
+    }
+</style>
+
+<body>
+    <div class=" main">
+        <div>
+            <button class="first">
+                <i class="fa-brands fa-github"></i>
+            </button>
+            <button class="second">
+                <i class="fa-brands fa-facebook"></i>
+            </button>
+        </div>
+        <div>
+            <button class="third">
+                <i class="fa-brands fa-square-instagram"></i>
+            </button>
+            <button class="fourth">
+                <i class="fa-brands fa-linkedin"></i>
+            </button>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: #01333c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .navbar {
+            background: #0c43c421;
+            backdrop-filter: blur(12px);
+            border-radius: 50px;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .nav-item {
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-size: 17px;
+            font-weight: 500;
+            color: #e2e8f0;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-item.active,
+        .nav-item:hover {
+            background: #3bf692;
+            color: #d70b0b;
+            box-shadow: 0 0 25px rgba(59, 246, 156, 0.7);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <a href="#" class="nav-item active">Home</a>
+        <a href="#" class="nav-item">Projects</a>
+        <a href="#" class="nav-item">Skills</a>
+        <a href="#" class="nav-item">Contact</a>
+    </div>
+
+</body>
+
+</html>

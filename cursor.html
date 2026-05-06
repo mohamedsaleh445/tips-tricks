@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cursor</title>
+</head>
+<style>
+    body {
+        background: #000;
+        padding: 20px;
+
+    }
+
+    div {
+        height: 100px;
+        width: 100px;
+        margin: 20px;
+        border: 2px solid green;
+    }
+
+    div:first-child {
+        cursor: pointer;
+    }
+
+    div:nth-child(2) {
+        cursor: progress;
+    }
+
+    div:nth-child(3) {
+        cursor: grab;
+    }
+
+    div:nth-child(4) {
+        cursor: text;
+    }
+
+    div:nth-child(5) {
+        cursor: wait;
+    }
+
+    div:nth-child(6) {
+        cursor: not-allowed;
+    }
+
+    div:nth-child(7) {
+        cursor: url(https://img.icons8.com/?size=100&id=X5V5DMvABgCK&format=png&color=000000), auto;
+    }
+</style>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+</body>
+
+</html>

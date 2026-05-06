@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>borders</title>
+</head>
+<style>
+    body {
+        background: #000;
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    div {
+        width: 150px;
+        height: 150px;
+        background-color: blueviolet;
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 25px;
+    }
+
+    .border1 {
+        border-radius: 10px 20px;
+    }
+
+    .border2 {
+        border-radius: 20%;
+    }
+
+    .border3 {
+        border-radius: 50%;
+    }
+
+    .border4 {
+        border-radius: 40px;
+    }
+
+    .border5 {
+        border-radius: 40px 60px 80px 120px;
+    }
+</style>
+
+<body>
+    <div class="border1">10px 20px</div>
+    <div class="border2">20%</div>
+    <div class="border3">50%</div>
+    <div class="border4">40px</div>
+    <div class="border5">40px 60px
+        <br>80px 120px
+    </div>
+
+</body>
+
+</html>

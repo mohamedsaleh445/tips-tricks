@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>img-overlay</title>
+</head>
+<style>
+    body {
+        background-color: #faebd763;
+        margin: 20px;
+    }
+
+    .card1 {
+        overflow: hidden;
+        position: relative;
+        width: 350px;
+        height: 250px;
+        border-radius: 20px;
+    }
+
+    .card1 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 1s ease;
+    }
+
+    .card1 .text {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #462424;
+        opacity: 0;
+        background-color: #71707085;
+        transition: 1s ease;
+        text-transform: capitalize;
+    }
+
+
+    .card1:hover img {
+        opacity: .5;
+    }
+
+    .card1:hover .text {
+        opacity: 1;
+    }
+
+    .slider {
+        border-radius: 10px;
+        margin-top: 20px;
+        width: 350px;
+        height: 250px;
+    }
+
+    .slider div {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        animation: slide 30s infinite ease-in-out;
+    }
+
+    @keyframes slide {
+        0% {
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq_Tb_s2OfzueO0EIwLtI0EPLci2AmuWNaew&s);
+            opacity: 1;
+        }
+
+        10% {
+            opacity: 0;
+        }
+
+        20% {
+            background-image: url(https://t3.ftcdn.net/jpg/06/08/84/26/360_F_608842682_fD2aWZHqbs1bcBrLgUXaY9ANV7mao0ea.jpg);
+            opacity: 1;
+
+        }
+
+        30% {
+            opacity: 0;
+        }
+
+        40% {
+            background-image: url(https://thumbs.dreamstime.com/b/goldfish-vibrant-orange-white-scales-gracefully-swimming-dark-blue-aquarium-374343510.jpg);
+            opacity: 1;
+
+        }
+
+        50% {
+            opacity: 0;
+        }
+
+        60% {
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE8uPGT72kOS1gzAB1e-kI5xBNhMag1YeYNA&s);
+            opacity: 1;
+
+        }
+
+        70% {
+            opacity: 0;
+        }
+
+        80% {
+            background-image: url(https://images.stockcake.com/public/9/c/8/9c85b325-ddb1-48ec-9a7c-c9d2b67318ea_large/vibrant-underwater-fish-stockcake.jpg);
+            opacity: 1;
+
+        }
+
+        90% {
+            opacity: 0;
+        }
+
+        100% {
+            background-image: url(https://thumbs.dreamstime.com/b/convict-fish-swims-coral-reef-30174669.jpg);
+            opacity: 1;
+
+        }
+
+    }
+
+    @keyframes fade {
+
+        0%,
+        100% {
+            opacity: 0;
+        }
+    }
+
+
+    .main-img {
+        width: 100%;
+        height: 300px;
+        margin-top: 20px;
+        display: flex;
+        gap: 20px;
+        transition: all .5s ease;
+    }
+
+    .main-img .card-img {
+        flex: 1;
+        transition: all .5s ease;
+
+    }
+
+    .main-img .card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+
+    }
+
+    .main-img:hover> :not(:hover) {
+        opacity: .5;
+    }
+
+    .main-img .card-img:hover {
+        transform: scale(1.1);
+    }
+
+    .splash {
+        position: relative;
+        height: 500px;
+    }
+
+    .img1,
+    .img2 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .splash .img1 {
+        background-image: url(https://thumbs.dreamstime.com/b/purple-night-sky-full-moon-cloudscape-353288747.jpg);
+    }
+
+    .splash .img2 {
+        background-image: url(https://img.magnific.com/free-vector/modern-black-grunge-brush-stroke-white-background_84443-24175.jpg?semt=ais_hybrid&w=740&q=80);
+        mix-blend-mode: screen;
+    }
+</style>
+
+<body>
+
+    <section class="card1">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU4M0NW-OFFc2G6EQSo27nLy3be5aZa4rAEg&s" alt="">
+        <div class="text">
+            <h1>the place to live in</h1>
+        </div>
+    </section>
+
+    <section class="slider">
+        <div>
+
+        </div>
+    </section>
+    <section class="main-img">
+
+        <div class="card-img"><img src="https://www.indiewire.com/wp-content/uploads/2019/12/us-1.jpg?w=758" alt="">
+        </div>
+        <div class="card-img"><img
+                src="https://cdn.prod.website-files.com/687e8d1b96312cc631cafec7/68c48d141e8381607486e3fb_66a4263d01a185d5ea22eeec_6408f6e7b5811271dc883aa8_batman-min.png"
+                alt=""></div>
+
+        <div class="card-img"><img
+                src="https://marketplace.canva.com/EAFjnlJzVcw/1/0/1200w/canva-film-poster-in-black-and-white-red-dark-%26-serious-style-YVSJ1V1BJec.jpg"
+                alt=""></div>
+        <div class="card-img"><img src="https://i.pinimg.com/736x/3b/bf/d4/3bbfd40e6cc5eac63584529491a588f5.jpg" alt="">
+        </div>
+
+    </section>
+
+    <div class="splash">
+        <div class="img1"></div>
+        <div class="img2"></div>
+        <!-- <img src="https://thumbs.dreamstime.com/b/purple-night-sky-full-moon-cloudscape-353288747.jpg" alt=""> -->
+    </div>
+</body>
+
+</html>

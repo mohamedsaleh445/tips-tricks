@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll animation</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #222;
+    }
+
+    .focuse-gallary {
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        gap: 120px;
+        padding: 0;
+        scrollbar-width: none;
+        overflow-x: scroll;
+    }
+
+    .focuse-gallary::-webkit-scrollbar {
+        display: none;
+    }
+
+    .item {
+        flex: 0 0 320px;
+        height: 400px;
+        background-color: blueviolet;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        animation: pop-in linear both;
+        animation-timeline: view(inline);
+
+    }
+
+    @keyframes pop-in {
+        0% {
+            transform: scale(.5) rotate(-10deg);
+            opacity: .3;
+        }
+
+        50% {
+            transform: scale(1) rotate(0deg);
+            opacity: 1;
+        }
+
+        100% {
+            transform: scale(.5) rotate(10deg);
+            opacity: .3;
+        }
+    }
+</style>
+
+<body>
+    <div class="focuse-gallary">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+</body>
+
+</html>

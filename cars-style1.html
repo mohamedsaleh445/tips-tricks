@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cars-style1</title>
+</head>
+<style>
+    body {
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        height: 100vh;
+    }
+
+    .card {
+        height: 400px;
+        width: 200px;
+        background-color: white;
+        border-radius: 20px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    span {
+        width: 200px;
+        height: 150px;
+        border-radius: 50%;
+        background-color: red;
+        position: absolute;
+        right: -90px;
+        top: -50px;
+        transition: all 1s ease;
+
+
+    }
+
+    .card-text {
+        position: absolute;
+        bottom: -60%;
+        text-align: center;
+        transition: all 1s ease;
+        text-transform: capitalize;
+        width: 80%;
+        margin: auto 20px;
+    }
+
+    .card-text button {
+        padding: 10px 20px;
+        background-color: #ff000015;
+        border-radius: 20px;
+        color: black;
+        font-size: 1rem;
+        border: 2px solid #ff000082;
+        transition: all .5s ease-in-out;
+
+    }
+
+    .card-text button:hover {
+        background-color: red;
+        color: white;
+    }
+
+    .card img {
+        width: 100%;
+        transition: all 0.5s ease;
+        position: absolute;
+        top: 30%;
+
+    }
+
+    .card:hover span {
+        width: 300px;
+        height: 200px;
+    }
+
+    .card:hover img {
+        top: 10%;
+        transition-delay: .2s;
+    }
+
+    .card:hover .card-text {
+        bottom: 10px;
+        transition-delay: .4s;
+
+    }
+</style>
+
+<body>
+
+    <div class="card">
+        <span></span>
+        <img src="https://png.pngtree.com/png-vector/20240710/ourmid/pngtree-burger-with-floating-ingredient-png-image_13054386.png"
+            alt="">
+        <div class="card-text">
+            <h1>burger</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur, laudantium!</p>
+            <button>Shop Now</button>
+        </div>
+    </div>
+    <div class="card">
+        <span></span>
+        <img src="https://png.pngtree.com/png-vector/20230831/ourmid/pngtree-pepperoni-pizza-isolated-with-clipping-path-png-image_9221595.png"
+            alt="" style="height: 150px;">
+
+        <div class="card-text">
+            <h1>pizza</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur, laudantium!</p>
+            <button>Shop Now</button>
+        </div>
+
+    </div>
+</body>
+
+</html>

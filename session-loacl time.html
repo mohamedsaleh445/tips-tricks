@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>session time & local timeing</title>
+</head>
+<style>
+    body {
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-image: linear-gradient(125deg, #0000ff81, #00ff7373), none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    section {
+        margin: auto;
+        text-align: center;
+        font-size: 25px;
+        text-transform: capitalize;
+        color: #254e24;
+    }
+
+    section div {
+        font-weight: bold;
+        font-size: 45px;
+    }
+
+    section button {
+        padding: 10px 20px;
+        font-size: 25px;
+        border-radius: 20px;
+        background-color: aqua;
+
+    }
+</style>
+
+<body>
+
+    <section>
+        <h1>this is your local time</h1>
+        <div id="loacal-time">00:00:00</div>
+    </section>
+    <section>
+        <h1>this is session time</h1>
+        <button class="start">start</button>
+        <button class="end">end</button>
+        <div id="counter">00:00:00</div>
+    </section>
+
+    <script>
+
+        const start = document.querySelector(".start")
+        const end = document.querySelector(".end")
+        const conter = document.querySelector("#counter")
+
+        let totalSeconds = 0;
+        let timer = null;
+
+        function formatTimer(total) {
+            const seconds = total % 60;
+            const minuts = Math.floor((total % 3600) / 60)
+            const hours = Math.floor(total / 3600)
+
+            return `${hours}:${minuts}:${seconds}`
+        }
+
+        start.addEventListener("click", function () {
+            if (timer != null) return;
+            timer = setInterval(() => {
+                totalSeconds++;
+                conter.innerText = formatTimer(totalSeconds)
+            }, 1000)
+        })
+
+        end.addEventListener("click", function () {
+            clearInterval(timer),
+                timer = null;
+            totalSeconds = 0
+            conter.innerText = "00:00:00"
+        })
+
+
+        setInterval(() => {
+            const loacl = document.querySelector('#loacal-time')
+            const now = new Date()
+            const time = now.toLocaleTimeString()
+            loacl.innerText = time
+        }, 1000);
+
+    </script>
+</body>
+
+</html>

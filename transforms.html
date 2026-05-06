@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform</title>
+</head>
+<style>
+    body {
+        background-color: #1e026179;
+    }
+
+    section {
+        margin: auto;
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 50px;
+        height: 100vh;
+    }
+
+    .box {
+        width: 160px;
+        height: 160px;
+        background: #1e40af;
+        color: white;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.5s ease;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .box:first-child {
+        transform: scaleY(.5);
+    }
+
+    .box:nth-child(2) {
+        transform: scaleX(.5);
+    }
+
+    .box:nth-child(3) {
+        transform: translateY(10px);
+    }
+
+    .box:nth-child(4) {
+        transform: translateX(10px);
+    }
+
+    .box:nth-child(5) {
+        transform: rotate(10deg);
+    }
+
+    .box:nth-child(6) {
+        transform: rotate(-10deg);
+    }
+
+    .box:nth-child(7) {
+        transform: skew(-5deg, -10deg);
+    }
+
+    .box:nth-child(8) {
+        transform: skewX(10deg);
+    }
+
+    .box:nth-child(9) {
+        transform: matrix3d(0.95, 0.15, 0.05, 0,
+                /* الصف الأول: scaleX + skew + rotate */
+                -0.80, .09, 0.20, 0,
+                /* الصف الثاني: skewX + scaleY */
+                100, 100, 100, 50,
+                /* الصف الثالث: تأثير عمق (Z) */
+                10, 10, 10, 1
+                /* الصف الرابع: translate + perspective */
+            )
+    }
+
+    .box:nth-child(10) {
+        /* transform: matrix(scaleX, skewY, skewX, scaleY, translateX, translateY); */
+        transform: matrix(1.2, 0.3, 0.4, 1.1, 50, -30);
+    }
+</style>
+
+<body>
+
+    <section>
+        <div class="box">scaleY</div>
+        <div class="box">scaleX</div>
+        <div class="box">translateY</div>
+        <div class="box">translateX</div>
+        <div class="box">rotate</div>
+        <div class="box">-rotate</div>
+        <div class="box">skew</div>
+        <div class="box">skewX</div>
+        <div class="box">matrix3d</div>
+        <div class="box">matrix</div>
+    </section>
+
+</body>
+
+</html>

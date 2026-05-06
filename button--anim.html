@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Social Menu</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle, #1e1b2e, #0f172a);
+        }
+
+        .container {
+            width: 300px;
+            height: 300px;
+            position: relative;
+        }
+
+        .share-toggle {
+            background: aqua;
+            border-radius: 50%;
+            width: 90px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+            position: absolute;
+            transform: translate(100%, 100%);
+        }
+
+        .share-toggle:hover,
+        .share-menu ul li:hover {
+            box-shadow: 0 0 30px aqua;
+        }
+
+        .share-toggle i {
+            font-size: 2rem;
+        }
+
+        .share-menu {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            transform: translate(-40%, 50%);
+        }
+
+        .share-menu ul li {
+            list-style: none;
+            position: absolute;
+            border: 2px solid black;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: rotate(calc(360deg/6*var(--i)));
+            transform-origin: 150px;
+            color: white;
+            opacity: 0;
+            transition: all .2s ease;
+            transition-delay: .2s;
+
+        }
+
+        .share-menu ul li i {
+            transform: rotate(calc(360deg/-6*var(--i)));
+            font-size: 1.2rem;
+
+        }
+
+        .container:hover .share-menu ul li {
+            animation: pop 2s ease-in-out;
+            opacity: 1;
+            animation-delay: .1s;
+
+
+        }
+
+        @keyframes pop {
+            0% {
+                transform: rotate(calc(0deg/6*var(--i)));
+                ;
+            }
+
+            100% {
+                transform: rotate(calc(360deg/6*var(--i)));
+                ;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="share-toggle">
+            <i class="fa-solid fa-share-nodes"></i>
+        </div>
+        <div class="share-menu">
+            <ul>
+                <li style="--i:0"><i class="fa-brands fa-facebook-f"></i></li>
+                <li style="--i:1"><i class="fa-brands fa-youtube"></i></li>
+                <li style="--i:2"><i class="fa-brands fa-tiktok"></i></li>
+                <li style="--i:3"><i class="fa-brands fa-instagram"></i></li>
+                <li style="--i:4"><i class="fa-brands fa-github"></i></li>
+                <li style="--i:5"><i class="fa-brands fa-twitter"></i></li>
+            </ul>
+        </div>
+    </div>
+
+    </script>
+
+</body>
+
+</html>

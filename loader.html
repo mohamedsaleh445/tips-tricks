@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loader</title>
+
+</head>
+<style>
+    body {
+        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 50px;
+        height: 150vh;
+    }
+
+
+    .spinner {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        border: 8px solid;
+        border-color: aqua #0b0bf052 #0b0bf052 #0b0bf052;
+        animation: rotate .9s infinite;
+    }
+
+
+    .spinner1 {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        border: 8px solid;
+        border-color: red transparent;
+        animation: rotate 1s infinite;
+    }
+
+
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .dots {
+        display: flex;
+        gap: 20px;
+    }
+
+    .dots span {
+        height: 20px;
+        width: 20px;
+        background-color: aqua;
+        border-radius: 50%;
+        animation: puls 3s ease-in-out infinite;
+
+    }
+
+
+    @keyframes puls {
+        0% {
+            transform: scale(1);
+            box-shadow: 0px 0px 10px aqua;
+
+        }
+
+        50% {
+            transform: scale(1.5);
+            box-shadow: 0px 0px 20px aqua;
+
+        }
+
+        100% {
+            transform: scale(1);
+            box-shadow: 0px 0px 10px aqua;
+
+        }
+    }
+
+
+    .loader {
+        height: 200px;
+        background: none;
+        display: flex;
+        gap: 15px;
+
+    }
+
+    .loader span {
+        background-color: #922492;
+        width: 5px;
+        height: 100%;
+        animation: scale 0.9s ease-in-out infinite;
+    }
+
+    @keyframes scale {
+
+        0%,
+        40%,
+        100% {
+            transform: scaleY(.05);
+        }
+
+        20% {
+            transform: scaleY(1);
+        }
+    }
+
+    .loader span:first-child {
+        background: #402492;
+        animation-delay: -.8s;
+    }
+
+    .loader span:nth-child(2) {
+        background-color: darkmagenta;
+        animation-delay: -.7s;
+    }
+
+    .loader span:nth-child(3) {
+        background-color: #8a0000;
+        animation-delay: -.6s;
+    }
+
+    .loader span:nth-child(4) {
+        background-color: #318b00;
+        animation-delay: -.5s;
+    }
+
+    .loader span:nth-child(5) {
+        background-color: #008b45;
+        animation-delay: -.4s;
+    }
+
+    .circle {
+        width: 50px;
+        height: 50px;
+        background: aqua;
+        border-radius: 50%;
+        animation: zoom 2s infinite;
+    }
+
+    @keyframes zoom {
+        0% {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+        50% {
+            transform: scale(1.2);
+            opacity: .5;
+            box-shadow: 0px 0px 30px aqua;
+        }
+
+        100% {
+            transform: scale(1.1);
+            opacity: 1;
+
+        }
+    }
+
+    .bars {
+        width: 250px;
+        height: 20px;
+        position: relative;
+        border-radius: 20px;
+        background: white;
+        animation: l3 2s infinite;
+    }
+
+    .bars::before {
+
+        content: "";
+        height: 100%;
+        width: 0%;
+        border-radius: 20px;
+        position: absolute;
+        background: repeating-linear-gradient(135deg, #00ff888e, #ff0000b6);
+        animation: fill 3s infinite ease;
+    }
+
+    @keyframes fill {
+        100% {
+            width: 100%;
+        }
+    }
+
+    .bar {
+        height: 30px;
+        width: 250px;
+        border-radius: 10px;
+        border: 1px solid white;
+        background-color: white;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .bar::after {
+        content: "";
+        width: 30px;
+        height: 100%;
+        position: absolute;
+        border-radius: 50px;
+        background-color: #008b45;
+        animation: move 5s infinite ease;
+    }
+
+    @keyframes move {
+        0% {
+            left: 0;
+        }
+
+        50% {
+            left: 220px;
+        }
+
+        100% {
+            left: 0;
+        }
+
+    }
+</style>
+
+<body>
+    <div class="spinner"></div>
+    <div class="spinner1"></div>
+    <div class="dots">
+        <span></span><span></span><span></span>
+    </div>
+    <div class="loader">
+        <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="circle"></div>
+    <div class="bars"></div>
+    <div class="bar"></div>
+
+</body>
+
+</html>

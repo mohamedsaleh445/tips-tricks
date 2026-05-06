@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <title>dot-nav</title>
+</head>
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: darkblue;
+        height: 50vh;
+    }
+
+    .dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .dots .nav-menu {
+        border: 2px solid black;
+        box-shadow: 2px 2px 3px black;
+        padding: 10px;
+        display: flex;
+        gap: 10px;
+        background-color: #7474ea8f;
+        border-radius: 20px;
+        opacity: 0;
+        transform: translateY(-30px);
+        transition: all 1s ease;
+    }
+
+
+    .dots i {
+        border-radius: 20px;
+        font-size: 2rem;
+        padding: 10px;
+        transition: all 1s ease;
+
+    }
+
+    .nav-menu i:hover {
+        transform: scale(1.1);
+        background-color: darkcyan;
+    }
+
+
+    .dots:hover .main-dots {
+        rotate: 90deg;
+    }
+
+    .dots:hover .nav-menu {
+        opacity: 1;
+        transform: translateY(0px);
+
+    }
+</style>
+
+<body>
+
+    <div class="dots">
+        <i class="fa-solid fa-braille main-dots"></i>
+        <div class="nav-menu">
+            <i class="fa-regular fa-house"></i>
+            <i class="fa-solid fa-user"></i>
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotating Border</title>
+    <style>
+        body {
+            background: #0a0a0a;
+            height: 100vh;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .btn {
+            position: relative;
+            display: inline-block;
+            padding: 25px 50px;
+            font-size: 30px;
+            color: aqua;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+
+        .btn:hover {
+            color: white;
+            box-shadow: 0 0 30px aqua;
+            transition: none;
+        }
+
+        /* الطبقة اللي هتلف */
+        .btn::before {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            background: conic-gradient(transparent,
+                    aqua,
+                    transparent,
+                    aqua,
+                    transparent);
+            border-radius: 20px;
+            z-index: -1;
+            animation: rotateBorder 3s linear infinite;
+        }
+
+        /* تأثير داخلي */
+        .btn::after {
+            content: '';
+            position: absolute;
+            inset: 5px;
+            background: #0a0a0a;
+            border-radius: 20px;
+            z-index: -1;
+        }
+
+        @keyframes rotateBorder {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Hover Effect إضافي */
+    </style>
+</head>
+
+<body>
+
+    <a href="#" class="btn">home</a>
+    <a href="#" class="btn">about</a>
+    <a href="#" class="btn">projects</a>
+
+</body>
+
+</html>

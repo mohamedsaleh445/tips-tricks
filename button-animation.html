@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css
+">
+    <title>button-animation</title>
+</head>
+<style>
+    body {
+        background-color: black;
+        height: 150vh;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        text-transform: capitalize;
+        text-align: center;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        gap: 20px;
+    }
+
+    button {
+        padding: 20px;
+        position: relative;
+        border-radius: 20PX;
+        font-size: 1rem;
+        text-transform: capitalize;
+        transition: all 1s ease-in-out;
+        z-index: 2;
+        overflow: hidden;
+
+
+    }
+
+    .btn1 {
+        background-color: #ff000023;
+        color: white;
+    }
+
+    .btn1::after {
+        content: '';
+        position: absolute;
+        border-radius: 20px;
+        top: 0;
+        left: -100%;
+        background-color: #ff000095;
+        height: 100%;
+        width: 100%;
+        z-index: -100;
+        transition: all 1s ease-in-out;
+    }
+
+    .btn1:hover::after {
+        left: 0;
+    }
+
+    .btn2 i {
+        margin-left: 10px;
+        opacity: 0;
+        transition: all 1s ease-in-out;
+    }
+
+    .btn2:hover i {
+        opacity: 1;
+    }
+
+    .btn3 {
+        transition: all .5s ease-in-out;
+    }
+
+    .btn3 i {
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .btn3:hover {
+        color: transparent;
+        background-color: white;
+
+    }
+
+    .btn3:hover i {
+        opacity: 1;
+        transition-delay: .5s;
+    }
+
+    .btn4 {
+        background-color: transparent;
+        color: white;
+        border: none;
+        transition: all 1s ease-in-out;
+    }
+
+    .btn4::after {
+        content: '';
+        height: 2px;
+        width: 0%;
+        background-color: white;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 1s ease-in-out;
+
+    }
+
+    .btn4::before {
+        content: '';
+        height: 2px;
+        width: 0%;
+        background-color: white;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 1s ease-in-out;
+
+    }
+
+    .btn4:hover {
+        letter-spacing: 4px;
+    }
+
+    .btn4:hover::before,
+    .btn4:hover::after {
+        width: 60%;
+        transition-delay: .5s;
+    }
+
+    .btn5 {
+        background: transparent;
+        outline: 2px solid red;
+        position: relative;
+    }
+
+    .btn5 span {
+        position: relative;
+        z-index: 99;
+        transition: all 1s ease-in-out;
+
+    }
+
+    .btn5::after {
+        content: '';
+        width: 500px;
+        height: 300px;
+        position: absolute;
+        background-color: red;
+        transform: skew(30deg);
+        top: 0;
+        left: 70%;
+        transition: all 1s ease-in-out;
+    }
+
+    .btn5::before {
+        content: '';
+        width: 500px;
+        height: 300px;
+        top: 0;
+        left: 0;
+        position: absolute;
+        background-color: #ffff00a1;
+        transform: skew(30deg);
+        transition: all 1s ease-in-out;
+
+
+    }
+
+    .btn5:hover::after {
+        left: -100%;
+    }
+
+    .btn5:hover::before {
+        left: 100%;
+    }
+
+    .btn5:hover span {
+        color: white;
+        letter-spacing: 10px;
+        font-weight: bold;
+    }
+
+    .btn6 {
+        position: relative;
+        background: #000;
+        color: white;
+        overflow: hidden;
+        gap: 20px;
+        width: 30%;
+        box-shadow: 3px 3px 0px white;
+        transition: all 2s ease-in-out;
+    }
+
+    .btn6 span {
+        position: absolute;
+        width: 50%;
+        right: 100%;
+        top: 10px;
+        transition: all 2s ease-in-out;
+
+    }
+
+    .btn6 i {
+        position: absolute;
+        left: 40px;
+        transition: all 2s ease-in-out;
+
+    }
+
+    .btn6:hover {
+        width: 100%;
+    }
+
+    .btn6:hover span {
+        right: 40%;
+        transition-delay: 1s;
+    }
+
+    .btn6:hover i {
+        left: 60%;
+    }
+
+    .btn7 {
+        border: 2px solid yellow;
+        border-radius: 20px;
+        position: relative;
+        font-weight: bold;
+        letter-spacing: 10px;
+    }
+
+    .btn7 span {
+        transition: all 1s ease-in-out;
+        z-index: -1;
+
+    }
+
+    .btn7 span:first-child {
+        background: yellowgreen;
+        width: 35%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        transition-delay: .15s;
+
+    }
+
+    .btn7 span:nth-child(2) {
+        background: yellowgreen;
+        width: 35%;
+        height: 100%;
+        position: absolute;
+        left: 35%;
+        top: 100%;
+        transition-delay: .30s;
+
+
+    }
+
+    .btn7 span:nth-child(3) {
+        background: yellowgreen;
+        width: 35%;
+        height: 100%;
+        position: absolute;
+        left: 70%;
+        top: 100%;
+        transition-delay: .60s;
+
+    }
+
+    .btn7:hover span {
+        top: 0;
+
+    }
+
+    .btn8 {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        transition: all 2s ease;
+        position: relative;
+        background-color: #000;
+        border: 3px solid #b197fc;
+        color: white;
+        box-shadow: 5px 5px 5px #b197fc;
+
+    }
+
+    .btn8 span {
+        letter-spacing: 5px;
+        transition: all 2s ease;
+    }
+
+    .btn8 i {
+        position: absolute;
+        color: #b197fc;
+        left: 80%;
+        transform: translate(-50%, -50%);
+        transition: all 1s ease;
+
+    }
+
+
+    .btn8:hover span {
+        transform: translateX(-200%);
+    }
+
+    .btn8:hover i {
+        left: 50%;
+    }
+
+    .btn9 {
+        position: relative;
+        z-index: 1;
+        color: #b197fc;
+        font-weight: bold;
+        letter-spacing: 7px;
+        font-size: 2rem;
+        box-shadow: 3px 3px #b197fc;
+    }
+
+    .btn9::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 30%;
+        background: #000;
+        inset: 0;
+        border-radius: 0 20px 20px 0;
+        transition: all 2s ease;
+        z-index: -1;
+    }
+
+    .btn9:hover::before {
+        width: 100%;
+    }
+
+    .btn10 {
+        position: relative;
+        font-size: 1.5rem;
+        letter-spacing: 5px;
+    }
+
+    .btn10 i {
+        position: absolute;
+        left: 25%;
+        top: 50%;
+        color: #ffd43b;
+        transition: all 1s ease;
+
+    }
+
+    .btn10 i:last-child {
+        top: 150%;
+    }
+
+    .btn10:hover {
+        background-color: #ffd43b;
+        color: white;
+    }
+
+    .btn10:hover i:first-child {
+        top: -100%;
+    }
+
+    .btn10:hover i:last-child {
+        top: 50%;
+        color: white;
+    }
+
+
+    .btn11,
+    .btn11 span {
+        overflow: visible;
+        font-weight: bolder;
+        font-size: 1.5rem;
+        position: relative;
+        margin-top: 50px;
+        transition: all 1S ease;
+    }
+
+    .btn11 i {
+        position: absolute;
+        transform: translate(-50%);
+        transition: all 1S ease;
+
+    }
+
+    .btn11 .empty {
+        left: 15%;
+        transition-delay: .5s;
+    }
+
+    .btn11 .shirt {
+        top: 0px;
+        left: 50%;
+        opacity: 0;
+        color: white;
+        transition-delay: .5s;
+    }
+
+    .btn11 .empty {
+        margin: 0px 15px;
+    }
+
+    .btn11 .added {
+        left: 50%;
+        opacity: 0;
+    }
+
+    .btn11:focus span {
+        animation: span 6s ease;
+    }
+
+    .btn11:focus .shirt {
+        animation: shirt 5s ease;
+        animation-delay: .3s;
+    }
+
+    .btn11:focus .empty {
+        animation: empty 5s ease;
+    }
+
+    .btn11:focus .added {
+        animation: added 5s ease;
+        animation-delay: 1s;
+    }
+
+    @keyframes span {
+        0% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+
+    }
+
+    @keyframes shirt {
+        0% {
+            opacity: 0;
+            top: 0;
+        }
+
+        50% {
+            opacity: 1;
+            top: -30px;
+        }
+
+        100% {
+            opacity: 0;
+            top: 0;
+        }
+
+    }
+
+    @keyframes empty {
+        0% {
+            left: 15%;
+        }
+
+        50% {
+            left: 50%;
+            opacity: .0;
+        }
+
+        100% {
+            left: -50%;
+            opacity: 0;
+        }
+    }
+
+    @keyframes added {
+        0% {
+            opacity: 0;
+            left: 50%;
+        }
+
+        50% {
+            left: 50%;
+            opacity: 1;
+        }
+
+
+        100% {
+            opacity: 0;
+            left: 15%;
+        }
+    }
+</style>
+
+<body>
+    <h1>this is button animation</h1>
+    <div class="buttons">
+        <button class="btn1">hover me</button>
+        <button class="btn2">hover me
+            <i class="fa-solid fa-heart fa-2xl" style="color: rgb(222, 37, 17);"></i></button>
+        <button class="btn3">hover me
+            <i class="fa-brands fa-medapps fa-2xl" style="color: rgb(222, 37, 17);"></i>
+        </button>
+        <button class="btn4">hover me</button>
+        <button class="btn5">
+            <span>hover me</span></button>
+        <button class="btn6">
+            <i class="fa-solid fa-truck-fast fa-2xl" style="color: #b197fc;"></i> <span>add to your
+                truck</span></button>
+        <button class="btn7">hover me
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <button class="btn8"><span>delete item</span>
+            <i class="fa-solid fa-trash fa-2xl"></i></button>
+
+        <button class="btn9">hover me</button>
+        <button class="btn10">send
+            <i class="fa-regular fa-paper-plane fa-xl"></i>
+            <i class="fa-solid fa-paper-plane fa-xl"></i>
+        </button>
+        <button class="btn11">
+            <i class="fa-solid fa-cart-shopping empty"></i>
+            <span> add to cart </span>
+            <i class="fa-solid fa-shirt shirt"></i>
+            <i class="fa-solid fa-cart-plus added"></i>
+        </button>
+
+
+
+    </div>
+</body>
+
+</html>

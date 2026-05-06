@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css-animation</title>
+</head>
+<style>
+    body {
+        background: #000;
+        padding: 20px;
+
+    }
+
+    div {
+        height: 80px;
+        width: 80px;
+        background-color: aqua;
+        margin: 50px 20px;
+        border-radius: 20px;
+
+    }
+
+    .box1 {
+        animation: rotate 3s infinite;
+    }
+
+    @keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .box2 {
+        animation: pulse 3s infinite;
+    }
+
+    @keyframes pulse {
+
+        0%,
+        100% {
+            transform: scale(0);
+        }
+
+        50% {
+            transform: scale(1);
+        }
+    }
+
+
+    .box3 {
+        animation: slideIn 3s infinite;
+    }
+
+    @keyframes slideIn {
+
+        0% {
+            transform: translateX(-50px);
+        }
+
+        50% {
+            transform: translateX(0px);
+        }
+
+        100% {
+            transform: translateX(-50px);
+        }
+    }
+
+
+    .box4 {
+        animation: fadeIn 3s infinite;
+    }
+
+    @keyframes fadeIn {
+
+        0% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .box5 {
+        animation: bounsce 1s infinite;
+    }
+
+    @keyframes bounsce {
+
+        0% {
+            transform: translateY(-20px);
+        }
+
+        50% {
+            transform: translateY(0px);
+        }
+
+        100% {
+            transform: translateY(-20px);
+        }
+    }
+
+
+    .box6 {
+        animation: colorChange 5s infinite;
+    }
+
+    @keyframes colorChange {
+        0% {
+            background-color: #8827ae;
+        }
+
+        50% {
+            background-color: #ff69b4;
+        }
+
+        100% {
+            background-color: #922492;
+        }
+    }
+
+    .box7 {
+        animation: shaps 2s 1s infinite alternate;
+        background-color: orange;
+
+    }
+
+    @keyframes shaps {
+        0% {
+            border-radius: 50% 0 0 0;
+            background-color: orange;
+            rotate: 0deg;
+        }
+
+        25% {
+            border-radius: 50% 50% 0 0;
+            background-color: olive;
+            rotate: 45deg;
+
+        }
+
+        50% {
+            border-radius: 50% 50% 50% 0;
+            background-color: olivedrab;
+
+            rotate: 135deg;
+
+        }
+
+        75% {
+            border-radius: 50% 50% 50% 50%;
+            background-color: yellowgreen;
+            rotate: 180deg;
+
+        }
+    }
+</style>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+    <div class="box6"></div>
+    <div class="box7"></div>
+
+
+</body>
+
+</html>

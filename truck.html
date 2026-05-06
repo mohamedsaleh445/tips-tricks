@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <title>truck</title>
+</head>
+<style>
+    body {
+        background-color: #f0090957;
+    }
+
+    button {
+        margin: 200px;
+        height: 100px;
+        width: 350px;
+        background-color: darkblue;
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 10px 5px 30px black;
+
+    }
+
+    i {
+        color: white;
+    }
+
+    .box {
+        position: absolute;
+        font-size: 3rem;
+        left: -100px;
+        transform: translateY(-50%);
+        transition: all 2s ease-in-out;
+        z-index: 1;
+
+    }
+
+    .van {
+        font-size: 5rem;
+        position: absolute;
+        right: -120px;
+        transform: translateY(-50%);
+        transition: all 4s ease-in-out;
+        z-index: 2;
+
+    }
+
+    .van .lights {
+        position: absolute;
+        height: 20px;
+        width: 40px;
+        z-index: -1;
+        border-radius: 0 150px 0 150px;
+        bottom: -10px;
+        right: -50px;
+        background-color: #daff06f5;
+        box-shadow: 0 0 10px yellow;
+        animation: lights 3s ease-in-out;
+    }
+
+
+    span {
+        color: white;
+        font-size: 1.25rem;
+        text-transform: capitalize;
+        font-weight: bolder;
+        transform: translate(-50%, -50%);
+    }
+
+    .firstText {
+        position: absolute;
+        opacity: 1;
+        transition: all .5s ease-in-out;
+
+    }
+
+    .lastText {
+        position: absolute;
+        opacity: 0;
+        transition: all .5s ease-in-out;
+        transition-delay: 6s;
+
+    }
+
+    .lastText i {
+        position: absolute;
+        top: 0;
+        right: -60px;
+        top: 10px;
+    }
+
+    .road {
+        font-size: 5rem;
+        position: absolute;
+        right: -110%;
+        transform: translateY(-50%);
+        transition: all .5s ease-in-out;
+
+
+    }
+
+    button:focus .box {
+        animation: boxmove 5s ease-in-out;
+    }
+
+
+    button:focus .van {
+        animation: carmove 5s ease-in-out;
+    }
+
+    button:focus .firstText {
+        animation: addopacity 6s ease-in-out;
+    }
+
+    button:focus .lastText {
+        animation: removeopacity 1s ease-in-out;
+        animation-delay: 5s;
+    }
+
+    button:focus .road {
+        animation: road 5s ease-in-out;
+    }
+
+    @keyframes lights {
+        0% {
+            right: 0;
+            width: 0;
+        }
+
+        20% {
+            right: -20px;
+        }
+
+        100% {
+            right: -50px;
+        }
+
+    }
+
+    @keyframes addopacity {
+
+        0%,
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes removeopacity {
+
+        0%,
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes road {
+        0% {
+            right: -110%;
+        }
+
+        20% {
+            right: -20%;
+        }
+
+        80% {
+            right: 10px;
+        }
+
+        100% {
+            right: -110%;
+        }
+
+    }
+
+    @keyframes boxmove {
+        0% {
+            left: -100px;
+
+        }
+
+        30% {
+            left: 10px;
+
+        }
+
+        70% {
+            left: 10px;
+        }
+
+        100% {
+            left: 100%;
+        }
+    }
+
+    @keyframes carmove {
+        0% {
+            right: -100px;
+        }
+
+        30% {
+            right: 240px;
+        }
+
+        70% {
+            right: 240px;
+        }
+
+        100% {
+            right: -100px;
+        }
+    }
+</style>
+
+<body>
+
+    <button>
+        <span class="firstText">place your order</span>
+        <i class="fa-solid fa-box-open box"></i>
+        <i class="fa-solid fa-truck-moving van"><span class="lights"></span></i>
+        <span class="road">- - - - - -</span>
+        <span class="lastText">order placed <i class="fa-regular fa-circle-check fa-2xl"
+                style="color: #63e6be;"></i></span>
+    </button>
+
+</body>
+
+</html>

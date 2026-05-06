@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>justify-content</title>
+</head>
+<style>
+    body {
+        background: #000;
+        height: 100vh;
+        text-align: center;
+        text-transform: capitalize;
+    }
+
+
+    h1 {
+        font-size: 3rem;
+        color: white;
+    }
+
+    div {
+        margin: 20px;
+        height: 100px;
+        width: 450px;
+        border: 5px aqua;
+        display: flex;
+        align-items: center;
+        font-size: 30px;
+    }
+
+    div:first-child {
+        border-style: solid;
+    }
+
+    div:nth-child(2) {
+        border-style: dashed;
+    }
+
+    div:nth-child(3) {
+        border-style: dotted;
+    }
+
+    div:nth-child(4) {
+        border-style: double;
+    }
+
+    div:nth-child(5) {
+        border-style: ridge;
+    }
+
+    div:nth-child(6) {
+        border-style: inset;
+    }
+</style>
+
+<body>
+    <h1>border style</h1>
+    <section>
+
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+    </section>
+
+</body>
+
+</html>
